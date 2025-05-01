@@ -4,7 +4,7 @@ project:
 
 book:
   title: "COMP/STAT112 Notebook"
-  author: "Your Name Here"
+  author: "Laurice Jimu"
   date: today
   reader-mode: true
   page-navigation: true
@@ -13,7 +13,7 @@ book:
   
   
   sidebar:
-    title: "Your Name Here"
+    title: "Laurice Jimu"
     collapse-level: 2
     style: "docked"
     pinned: true
@@ -27,16 +27,16 @@ book:
       chapters: 
       - bw/bw-uni.qmd
       - bw/bw-bi.qmd
-      - bw/bw-tri.qmd
+      # - bw/bw-tri.qmd
       - bw/bw-quad.qmd
       - bw/bw-spatial.qmd
 
-    - part: "In-class Activities"
-      chapters: 
-      - ica/ica-uni.qmd
-      - ica/ica-bi.qmd
-      - ica/ica-multi.qmd
-      - ica/ica-spatial.qmd
+    # - part: "In-class Activities"
+    #   chapters: 
+    #   - ica/ica-uni.qmd
+    #   - ica/ica-bi.qmd
+    #   - ica/ica-multi.qmd
+    #   - ica/ica-spatial.qmd
 
 format:
   html:
