@@ -1,6 +1,7 @@
 ---
 title: "Univariate Viz"
 ---
+
 ```{r}
 # importing data 
 hikes <-read.csv("https://mac-stat.github.io/data/high_peaks.csv")
