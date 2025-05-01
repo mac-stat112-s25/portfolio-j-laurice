@@ -1,0 +1,56 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "COMP/STAT112 Notebook",
+    "section": "",
+    "text": "Welcome\nWelcome to my online portfolio for COMP/STAT112 course taken at Macalester College. Please, use the side bar on the left for navigation.",
+    "crumbs": [
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "bw/bw-uni.html",
+    "href": "bw/bw-uni.html",
+    "title": "1  Univariate Viz",
+    "section": "",
+    "text": "Use this file to generate a professional looking univariate visualization. The visualization will not perfect the first time but you are expected to improve on it throughout the semester especially after covering advanced topics such as effective viz.\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.0.4     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(viridis)\n\nLoading required package: viridisLite\n\nhikes &lt;- read.csv(\"https://mac-stat.github.io/data/high_peaks.csv\")\nggplot(hikes, aes(x = elevation)) +\n  geom_histogram(color = \"white\", fill = \"#2a9d8f\") + \n  labs( \n    title = \"Hike Elevation Distribution\",\n    x = \"Elevation (ft)\", \n    y = \"Number of Hikes\"\n  ) +\n  theme_minimal() +\n  theme(\n    plot.title = element_text(hjust = 0.5) \n  )\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\n\n\n\n#| fig-alt:\"This histogram displays the distribution of hike elevations in the High Peaks region. The x-axis represents elevation in feet, while the y-axis represents the number of hikes. The bars, filled in brown with black borders, show the frequency of hikes at different elevation levels, indicating whether most hikes occur at lower or higher elevations.\"",
+    "crumbs": [
+      "Best Work",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Univariate Viz</span>"
+    ]
+  },
+  {
+    "objectID": "bw/bw-bi.html",
+    "href": "bw/bw-bi.html",
+    "title": "2  Bivariate Viz",
+    "section": "",
+    "text": "Use this file to generate a professional looking bivariate visualization. The visualization will not perfect the first time but you are expected to improve it throughout the semester especially after covering advanced topics such as effective viz.",
+    "crumbs": [
+      "Best Work",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Bivariate Viz</span>"
+    ]
+  },
+  {
+    "objectID": "bw/bw-quad.html",
+    "href": "bw/bw-quad.html",
+    "title": "3  Quadvariate Viz",
+    "section": "",
+    "text": "Use this file to generate a professional looking quadvariate visualization. The visualization will not perfect the first time but you are expected to improve on it throughout the semester especially after covering advanced topics such as effective viz.",
+    "crumbs": [
+      "Best Work",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Quadvariate Viz</span>"
+    ]
+  },
+  {
+    "objectID": "bw/bw-spatial.html",
+    "href": "bw/bw-spatial.html",
+    "title": "4  Spatial Viz",
+    "section": "",
+    "text": "Use this file to generate a professional looking spatial visualization. The visualization will not perfect the first time but you are expected to improve on it throughout the semester especially after covering advanced topics such as effective viz.",
+    "crumbs": [
+      "Best Work",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Spatial Viz</span>"
+    ]
+  }
+]
