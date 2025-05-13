@@ -1,0 +1,31 @@
+---
+title: "Bivariate Best Work"
+format: html
+---
+
+```{r}
+library(tidyverse)
+library(fivethirtyeight)
+
+data(bechdel)
+
+# Clean data
+bechdel_clean <- bechdel |>
+  mutate(budget_2013 = budget_2013 / 1e6, # Convert to millions for readability
+         domgross_2013 = domgross_2013 / 1e6) |> 
+  filter(!is.na(budget_2013), !is.na(domgross_2013))
+
+# Improved bivariate visualization
+ggplot(bechdel_clean, aes(x = budget_2013, y = domgross_2013)) +
+  geom_point(alpha = 0.6, color = "steelblue", size = 2) +
+  geom_smooth(method = "lm", se = TRUE, color = "darkred") +
+  theme_minimal() +
+  labs(title = "Relationship between Film Budget and Domestic Gross Revenue",
+       subtitle = "Films from the Bechdel Dataset (Adjusted to 2013 dollars)",
+       x = "Budget (Million USD)",
+       y = "Domestic Gross Revenue (Million USD)",
+       caption = "Source: FiveThirtyEight Bechdel Dataset") +
+  theme(plot.title = element_text(face = "bold", size = 14),
+        plot.subtitle = element_text(size = 12),
+        axis.title = element_text(size = 11))
+```

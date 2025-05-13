@@ -1,0 +1,27 @@
+---
+title: "Trivariate Viz Best Work"
+---
+
+Use this file to generate a professional looking **trivariate** visualization. The visualization will not perfect the first time but you are expected to improve on it throughout the semester especially after covering advanced topics such as effective viz.
+
+```{r}
+library(tidyverse)
+library(viridis)
+
+# Using diamonds dataset from ggplot2
+data("diamonds")
+```
+
+```{r}
+# Initial Plot: Price, Carat, and Clarity (facet by clarity)
+ggplot(diamonds, aes(x = carat, y = price, color = cut)) +
+  geom_point(alpha = 0.6, size = 1.5) +
+  facet_wrap(~ clarity) +
+  labs(title = "Diamond Price vs. Carat by Clarity and Cut",
+       x = "Carat",
+       y = "Price (USD)",
+       color = "Cut") +
+  geom_smooth(method = lm, se = FALSE, color = "red") +
+  theme_minimal() +
+  scale_color_viridis(discrete = TRUE)
+```

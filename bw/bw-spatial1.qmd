@@ -1,0 +1,35 @@
+---
+title: "Spatial Best Work"
+format: html
+---
+
+```{r}
+library(tidyverse)
+library(maps)
+library(viridis)
+
+# Load US states map data
+us_states <- map_data("state")
+
+# Generate example data (using arbitrary values for demonstration)
+set.seed(123)
+state_data <- us_states |> 
+  group_by(region) |> 
+  summarise(avg_value = runif(1, 10, 100))
+
+# Merge data with map
+map_data_combined <- left_join(us_states, state_data, by = "region")
+
+# Improved spatial visualization
+ggplot(map_data_combined, aes(long, lat, group = group, fill = avg_value)) +
+  geom_polygon(color = "white") +
+  scale_fill_viridis(name = "Average Value", option = "plasma") +
+  coord_fixed(1.3) +
+  theme_void() +
+  labs(title = "Spatial Distribution of Average Values by US State",
+       subtitle = "Illustrative Spatial Visualization with Synthetic Data",
+       caption = "Source: maps Package & Simulated Data") +
+  theme(plot.title = element_text(face = "bold", size = 14),
+        plot.subtitle = element_text(size = 12),
+        legend.position = "bottom")
+```

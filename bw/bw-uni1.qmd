@@ -1,5 +1,5 @@
 ---
-title: "Univariate Viz"
+title: "Univariate Viz Best Work"
 ---
 
 Use this file to generate a professional looking **univariate** visualization.
@@ -10,7 +10,7 @@ library(tidyverse)
 library(viridis)
 hikes <- read.csv("https://mac-stat.github.io/data/high_peaks.csv")
 ggplot(hikes, aes(x = elevation)) +
-  geom_histogram(color = "white", fill = "#2a9d8f") + 
+  geom_histogram(color = "black", fill = "#c4a484") + 
   labs( 
     title = "Hike Elevation Distribution",
     x = "Elevation (ft)", 

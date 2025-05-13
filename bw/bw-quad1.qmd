@@ -1,0 +1,32 @@
+---
+title: "Quadvariate Best Work"
+format: html
+---
+
+```{r}
+library(tidyverse)
+library(ggplot2)
+
+data(diamonds)
+
+# Filter dataset for clarity
+diamonds_filtered <- diamonds |> 
+  filter(carat < 2.5)
+
+# Quadvariate visualization
+ggplot(diamonds_filtered, aes(x = carat, y = price, color = clarity, size = depth)) +
+  geom_point(alpha = 0.6) +
+  facet_wrap(~ cut, scales = "free_y") +
+  scale_color_viridis_d() +
+  theme_minimal() +
+  labs(title = "Diamond Prices by Carat, Depth, Clarity, and Cut",
+       subtitle = "Quadvariate Visualization Using the Diamonds Dataset",
+       x = "Carat",
+       y = "Price (USD)",
+       color = "Clarity",
+       size = "Depth (%)",
+       caption = "Source: ggplot2 Diamonds Dataset") +
+  theme(plot.title = element_text(face = "bold", size = 14),
+        plot.subtitle = element_text(size = 12),
+        axis.title = element_text(size = 11))
+```
